@@ -1,0 +1,38 @@
+{
+  "commands": {
+    "format": "",
+    "lint": "",
+    "typecheck": "",
+    "test": "npm test --silent",
+    "e2e": ""
+  },
+  "gate": {
+    "steps": [
+      "lint",
+      "typecheck",
+      "test"
+    ],
+    "maxAttempts": 5,
+    "stepTimeoutSeconds": 600,
+    "enforceOnMainSession": true
+  },
+  "loop": {
+    "defaultLane": "standard",
+    "maxFixRounds": 2
+  },
+  "reviewers": {
+    "always": [
+      "review-security",
+      "review-observability",
+      "review-architecture"
+    ],
+    "whenUi": [
+      "review-ux"
+    ]
+  },
+  "tracker": "local",
+  "baseBranch": "main",
+  "observability": {
+    "platform": ""
+  }
+}
